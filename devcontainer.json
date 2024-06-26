@@ -1,0 +1,22 @@
+{
+    "name": "PHP & MySQL Dev Container",
+    "dockerComposeFile": "docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/workspace",
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "felixfbecker.php-debug", //Bietet Debugging-Funktionalitäten für PHP innerhalb von Visual Studio Code.
+        "ms-azuretools.vscode-docker", //Ermöglicht die Integration und Verwaltung von Docker-Containern direkt in Visual Studio Code
+        "esbenp.prettier-vscode", //Prettier ist ein Code-Formatter, der Code automatisch formatiert, um eine konsistente Codebasis zu gewährleisten
+        "dbaeumer.vscode-eslint", //ESLint bietet Linting-Funktionalitäten für JavaScript/TypeScript, um Fehler und potenzielle Probleme im Code frühzeitig zu erkennen.
+        "bmewburn.vscode-intelephense-client", // Bietet erweiterte PHP-IntelliSense-Funktionalitäten, einschließlich Autovervollständigung, Code-Navigation und Fehlerüberprüfung.
+        "mtxr.sqltools", // Eine Datenbankverwaltungstool für verschiedene Datenbanksysteme, einschließlich MySQL.
+        "neilbrayfield.php-docblocker", // Automatisiert die Erstellung von PHP-Dokumentationsblöcken
+        "ms-azuretools.vscode-docker" // Docker Explorer
+    ],
+    "forwardPorts": [8084],
+    "postCreateCommand": "docker-php-ext-install mysqli && docker-php-ext-enable mysqli",
+    "remoteUser": "vscode"
+}
